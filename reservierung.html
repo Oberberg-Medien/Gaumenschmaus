@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><!-- Created by Artisteer v4.1.0.59861 -->
+    <meta charset="utf-8">
+    <title>Gaumenschmaus - Reservierung</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = yes, width = device-width">
+    <meta name="description" content="Gut Bürgerliche Küche in Gummersbach, nach Neueröffnung und Renovierung" />
+<link href="favicon.ico" type="image/x-icon" rel="icon" />
+<link href="css/custom-theme/jquery-ui-1.10.3.custom.css" rel="stylesheet">    <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="style.responsive.css" media="all">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44541794-1', 'der-gaumenschmaus.de');
+  ga('send', 'pageview');
+
+</script>
+
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+    <script src="script.responsive.js"></script>
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+<script type="text/javascript">
+function check(){
+
+if (document.getElementById('name').value==""){
+	alert("Name ist ein Pflichtfeld. Bitte ausfüllen");
+	document.getElementById('name').focus();
+	return false;
+}
+var x=document.getElementById('mail').value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("E-Mail ist ein Pflichtfeld. Bitte ausfüllen");
+  document.getElementById('mail').focus();
+  return false;
+}	
+	var id=document.getElementById('captcha').value;
+	var name = document.getElementById('name').value;
+	var mail = document.getElementById('mail').value;
+	var datum = document.getElementById('datepicker').value;
+	
+	var personen=document.getElementById('personen').value;
+	var bermerkung=document.getElementById('bermerkung').value;
+	
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+		//alert(xmlhttp.readyState);
+		//alert(xmlhttp.status);
+//	document.getElementById(pos).style.backgroundColor='#FFFFFF';	
+
+			var str=xmlhttp.responseText;
+		if (str=="Die aufgabe wurde nicht richtig gelöst!"){
+			alert(xmlhttp.responseText);
+		}else{
+		alert(xmlhttp.responseText);
+		document.getElementById('name').value="";
+		document.getElementById('mail').value="";
+		document.getElementById('datepicker').value="";
+		document.getElementById('personen').value="";
+		document.getElementById('bermerkung').value="";
+		document.getElementById('captcha').value="";
+		}
+		//document.getElementById('sys_message').innerHTML=xmlhttp.responseText
+		//document.getElementById('gesendet').style.display="block";
+
+//alert(xmlhttp.responseText);
+    //document.getElementById(pos).innerHTML=xmlhttp.responseText;
+    }
+}
+//alert(id);
+xmlhttp.open("GET","http://der-gaumenschmaus.de/check.php?cc="+id+"&name="+name+"&mail="+mail+"&datum="+datum+"&personen="+personen+"&bermerkung="+bermerkung,true);
+xmlhttp.send();	
+}
+</script>
+<style>.content .postcontent-0 .layout-item-0 { margin: 7px;  }
+.content .postcontent-0 .layout-item-1 { border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-width:2px;border-top-color:#E0E0E0;border-right-color:#E0E0E0;border-bottom-color:#E0E0E0;border-left-color:#E0E0E0;  border-collapse: separate; border-radius: 10px;  }
+.content .postcontent-0 .layout-item-2 { padding: 4px; border-radius: 10px;  }
+.ie7 .post .layout-cell {border:none !important; padding:0 !important; }
+.ie6 .post .layout-cell {border:none !important; padding:0 !important; }
+
+</style>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+</head>
+<body>
+<div id="main">
+<header class="header">
+<div class="slider slidecontainerheader" data-width="1000" data-height="500">
+    <div class="slider-inner">
+<div class="slide-item slideheader0">
+
+</div>
+<div class="slide-item slideheader1">
+
+</div>
+<div class="slide-item slideheader2">
+
+</div>
+
+    </div>
+</div>
+    <div class="shapes">
+            </div>
+<nav class="nav">
+       				<ul class="hmenu">
+   					<li><a href="index.html">Home</a></li>
+   					<li><a href="kontakt.html">Kontakt</a></li>
+   					<li><a href="reservierung.html" class="active">Reservierung</a></li>
+   					<li><a href="karte.html">Speisekarte</a></li>
+                    <li><a href="wochenplan.html">Wochenplan</a></li>
+   				</ul> 
+ 
+    </nav>
+</header>
+<div class="sheet clearfix">
+            <div class="layout-wrapper">
+                <div class="content-layout">
+                    <div class="content-layout-row">
+                        <div class="layout-cell content"><article class="post article">
+                                <h1 class="postheader">Bestellen Sie einen Tisch... oder lieber gleich das ganze Lokal?	</h1>
+                                                
+                <div class="postcontent postcontent-0 clearfix"><div class="content-layout-wrapper layout-item-0">
+<div class="content-layout layout-item-1">
+    <div class="content-layout-row">
+    <div class="layout-cell layout-item-2" style="width: 100%" >
+        <p>Hier können Sie uns Ihre Reservierungswünsche mitteilen oder einfach eine Anfrage für eine Feierlichkeit stellen</p>
+        <form>
+        <p>Ihr Name </p><p><input type="text" id="name" name="name"></p>
+        <p>Ihre E-Mail Adresse </p><p><input type="text" id="mail" name="mail"></p>
+        <p>Datum der Reservierung </p><p><input type="text" id="datepicker" name="datepicker" id="datepicker"/>   </p>     <p>Anzahl Personen </p><p><input type="text" name="personen" id="personen"></p>
+        <p>Bemerkung </p><p><textarea rows="5" id="bermerkung" cols="100" name="bemerkung"></textarea></p>
+        <p>Aufgabe</p><p><img src="captcha.php" height="22" /></p>
+        <p>Lösung:</p><p><input type="text" id="captcha" name="captcha"></p>
+        <p><a class="button" onclick="check();">Abschicken</a></p>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+</article></div>
+                    </div>
+                </div>
+            </div><footer class="footer">
+				<div class="content-layout-wrapper layout-item-0">
+					<div class="content-layout layout-item-1">
+   						<div class="content-layout-row">
+    						<div class="layout-cell layout-item-2" style="width: 50%">
+        						<p><br><a href="impressum.html">Impressum</a></p>
+    						</div>
+    						<div class="layout-cell layout-item-2" style="width: 50%">
+        						<p><span style="text-align: right;"><span style="color: #FFFFFF;">Info &nbsp;den nächsten</span> <span style="color: #FFFFFF;">Tag</span>&nbsp;<input value="Emailadresse eintragen" style="font-style: italic; width: 170px; height: 28px; color: rgb(128, 128, 128);" onFocus="this.value=''">&nbsp;&nbsp;<a class="button">Anmelden</a></span><br></p>
+    						</div>
+   						</div>
+					</div>
+				</div>
+			</footer>
+
+    </div>
+
+</div>
+
+
+</body></html>

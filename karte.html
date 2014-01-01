@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><!-- Created by Artisteer v4.1.0.59861 -->
+    <meta charset="utf-8">
+    <title>Gaumenschmaus - Speisekarte</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = yes, width = device-width">
+    <meta name="description" content="Gut Bürgerliche Küche in Gummersbach, nach Neueröffnung und Renovierung" />
+<link href="favicon.ico" type="image/x-icon" rel="icon" />
+<link href="css/custom-theme/jquery-ui-1.10.3.custom.css" rel="stylesheet">    <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="style.responsive.css" media="all">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44541794-1', 'der-gaumenschmaus.de');
+  ga('send', 'pageview');
+
+</script>
+
+    <script src="jquery.js"></script>
+
+    <script src="script.js"></script>
+    <script src="script.responsive.js"></script>
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+<script type="text/javascript">
+  
+function check(){
+
+if (document.getElementById('name').value==""){
+	alert("Name ist ein Pflichtfeld. Bitte ausfüllen");
+	document.getElementById('name').focus();
+	return false;
+}
+var x=document.getElementById('mail').value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("E-Mail ist ein Pflichtfeld. Bitte ausfüllen");
+  document.getElementById('mail').focus();
+  return false;
+}	
+	var id=document.getElementById('captcha').value;
+	var name = document.getElementById('name').value;
+	var mail = document.getElementById('mail').value;
+	var datum = document.getElementById('datepicker').value;
+	
+	var personen=document.getElementById('personen').value;
+	var bermerkung=document.getElementById('bermerkung').value;
+	
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+		//alert(xmlhttp.readyState);
+		//alert(xmlhttp.status);
+//	document.getElementById(pos).style.backgroundColor='#FFFFFF';	
+
+			var str=xmlhttp.responseText;
+		if (str=="Die aufgabe wurde nicht richtig gelöst!"){
+			alert(xmlhttp.responseText);
+		}else{
+		alert(xmlhttp.responseText);
+		document.getElementById('name').value="";
+		document.getElementById('mail').value="";
+		document.getElementById('datepicker').value="";
+		document.getElementById('personen').value="";
+		document.getElementById('bermerkung').value="";
+		document.getElementById('captcha').value="";
+		}
+		//document.getElementById('sys_message').innerHTML=xmlhttp.responseText
+		//document.getElementById('gesendet').style.display="block";
+
+//alert(xmlhttp.responseText);
+    //document.getElementById(pos).innerHTML=xmlhttp.responseText;
+    }
+}
+//alert(id);
+xmlhttp.open("GET","http://der-gaumenschmaus.de/check.php?cc="+id+"&name="+name+"&mail="+mail+"&datum="+datum+"&personen="+personen+"&bermerkung="+bermerkung,true);
+xmlhttp.send();	
+}
+</script>
+<style>.content .postcontent-0 .layout-item-0 { margin: 7px;  }
+.content .postcontent-0 .layout-item-1 { border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-width:2px;border-top-color:#E0E0E0;border-right-color:#E0E0E0;border-bottom-color:#E0E0E0;border-left-color:#E0E0E0;  border-collapse: separate; border-radius: 10px;  }
+.content .postcontent-0 .layout-item-2 { padding: 4px; border-radius: 10px;  }
+.ie7 .post .layout-cell {border:none !important; padding:0 !important; }
+.ie6 .post .layout-cell {border:none !important; padding:0 !important; }
+
+</style>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+</head>
+<body>
+<div id="main">
+<header class="header">
+<div class="slider slidecontainerheader" data-width="1000" data-height="500">
+    <div class="slider-inner">
+<div class="slide-item slideheader0">
+
+</div>
+<div class="slide-item slideheader1">
+
+</div>
+<div class="slide-item slideheader2">
+
+</div>
+
+    </div>
+</div>
+    <div class="shapes">
+            </div>
+			<nav class="nav">
+   				<ul class="hmenu">
+   					<li><a href="index.html">Home</a></li>
+   					<li><a href="kontakt.html">Kontakt</a></li>
+   					<li><a href="reservierung.html">Reservierung</a></li>
+   					<li><a href="karte.html" class="active">Speisekarte</a></li>
+                    <li><a href="wochenplan.html">Wochenplan</a></li>
+   				</ul> 
+   			</nav>
+</header>
+<div class="sheet clearfix">
+            <div class="layout-wrapper">
+                <div class="content-layout">
+                    <div class="content-layout-row">
+                        <div class="layout-cell content"><article class="post article">
+                                <h1 class="postheader">Speisekarte</h1>
+                                                
+                <div class="postcontent postcontent-0 clearfix"><div class="content-layout-wrapper layout-item-0">
+<div class="content-layout layout-item-1">
+    <div class="content-layout-row">
+    <div class="layout-cell layout-item-2" style="width: 100%" >
+<div id="accordion">
+  <h3 ><img src="images/salate.png"></h3>
+  <div>
+  	<table width="90%">
+    	<tr>
+        	<td><h2>Gemischte Salate</h2></td>
+        	<td></td>
+        </tr>
+    	<tr>
+        	<td><h5> - Beilagensalat</h5></td>
+        	<td><h5>€ 1,50 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5> - großer Salat</h5></td>
+        	<td><h5>€ 3,80 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h2> großer Salat mit:</h2></td>
+        	<td></td>
+        </tr>
+    	<tr>
+        	<td><h5> - Putenbruststreifen</td>
+        	<td><h5>€ 5,40 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5> - Thunfisch</td>
+        	<td><h5>€ 5,40 </h5></td>
+        </tr>
+    </table>
+  </div>
+  <h3><img src="images/schnitzel.png"></h3>
+  <div>
+      	<table width="90%">
+    	<tr>
+        	<td><h5>Schnitzel Wiener Art</h5></td>
+        	<td><h5>€ 4,60</h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Schnitzel Jäger Art</h5></td>
+        	<td><h5>€ 5,40 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Schnitzel Zigeuner Art</h5></td>
+        	<td><h5>€ 5,40 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Schnitzel Gaumenschmaus</h5></td>
+        	<td><h5>€ 5,60 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Schnitzel mit Zwiebeln</h5></td>
+        	<td><h5>€ 5,60 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Schnitzel Hollandaise</h5></td>
+        	<td><h5>€ 5,60 </h5></td>
+        </tr>
+    </table>
+
+  </div>
+  <h3><img src="images/Wurstundfleisch.png"></h3>
+  <div>
+    <table width="90%">
+    	<tr>
+        	<td><h5>Bratwurst</h5></td>
+        	<td><h5>€ 2,10</h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Currywurst</h5></td>
+        	<td><h5>€ 2,40 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Hans-Wurst</h5></td>
+        	<td><h5>€ 2,70 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Zigeunerwurst</h5></td>
+        	<td><h5>€ 2,50 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Jägerwurst</h5></td>
+        	<td><h5>€ 2,50 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Gaumenschmaus</h5></td>
+        	<td><h5>€ 2,70 </h5></td>
+        </tr>
+        <tr>
+        	<td><h5>Frikadelle hausgemacht</h5></td>
+        	<td><h5>€ 2,10 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Putenbrust</h5></td>
+        	<td><h5>€ 4,60 </h5></td>
+        </tr>
+    </table>
+  </div>
+  <h3><img src="images/saucen.png"></h3>
+  <div>
+    <table width="90%">
+    	<tr>
+        	<td><h5>Ketchup / Majo</h5></td>
+        	<td><h5>€ 0,50 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Zigeunersauce (hausgemacht)</h5></td>
+        	<td><h5>€ 0,80 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Jägersauce (hausgemacht)</h5></td>
+        	<td><h5>€ 0,80 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Currysauce (hausgemacht)</h5></td>
+        	<td><h5>€ 0,50 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Gaumenschmaus (hausgemacht)</h5></td>
+        	<td><h5>€ 1,00 </h5></td>
+        </tr>
+        <tr>
+        	<td><h5>Hollandaise</h5></td>
+        	<td><h5>€ 1,00 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Curry-Ananas (hausgemacht)</h5></td>
+        	<td><h5>€ 0,80 </h5></td>
+        </tr>
+    </table>
+  </div>
+  <h3><img src="images/flaschenbier.png"></h3>
+  <div>
+   <table width="90%">
+    	<tr>
+        	<td><h5>Zunft Kölsch 0,33l</h5></td>
+        	<td><h5>€ 1,90</h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Zunft Kölsch Alkoholfrei 0,33l</h5></td>
+        	<td><h5>€ 1,90 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Bergisches Landbier 0,5l</h5></td>
+        	<td><h5>€ 2,70 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Erdinger Hefeweizen 0,5l</h5></td>
+        	<td><h5>€ 2,90 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Erdinger Alkoholfrei 0,5l</h5></td>
+        	<td><h5>€ 2,90 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Erzquell Pils 0,33l</h5></td>
+        	<td><h5>€ 1,90 </h5></td>
+        </tr>
+        <tr>
+        	<td><h5>Erzquell Pils Alkoholfrei 0,33l</h5></td>
+        	<td><h5>€ 1,90 </h5></td>
+        </tr>
+    </table>
+  </div>
+  
+  <h3><img src="images/getraenke.png"></h3>
+  <div>
+    <table width="90%">
+    	<tr>
+        	<td><h5>Cola, Light, Zero Fl. 0,2l</h5></td>
+        	<td><h5>€ 1,50</h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Mezzo Mix Fl. 0,2l</h5></td>
+        	<td><h5>€ 1,50 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Fanta, Sprite Fl. 0,2l</h5></td>
+        	<td><h5>€ 1,50 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Mineralwasser Fl. 0,2l</h5></td>
+        	<td><h5>€ 1,30 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Apfelschorle Fl. 0,2l</h5></td>
+        	<td><h5>€ 1,40 </h5></td>
+        </tr>
+    	<tr>
+        	<td><h5>Fassbrause Fl. 0,33l</h5></td>
+        	<td><h5>€ 1,90 </h5></td>
+        </tr>
+        <tr>
+        	<td><h5>Malzbier Fl. 0,33l</h5></td>
+        	<td><h5>€ 1,90 </h5></td>
+        </tr>
+        <tr>
+        	<td><h5>Kaffee, kleine Tasse</h5></td>
+        	<td><h5>€ 1,00 </h5></td>
+        </tr><tr>
+        	<td><h5>Kaffee, große Tasse</h5></td>
+        	<td><h5>€ 1,50 </h5></td>
+        </tr><tr>
+        	<td><h5>Milch, große Tasse</h5></td>
+        	<td><h5>€ 0,90 </h5></td>
+        </tr>
+    </table>
+  </div>
+</div>        
+    </div>
+    </div>
+</div>
+</div>
+</div>
+
+<script>
+  $(function() {
+    $( "#accordion" ).accordion({
+      event: "click hoverintent",
+	  icons: null,
+	  heightStyle: 'content',
+    });
+  });
+ 
+  /*
+   * hoverIntent | Copyright 2011 Brian Cherne
+   * http://cherne.net/brian/resources/jquery.hoverIntent.html
+   * modified by the jQuery UI team
+   */
+  $.event.special.hoverintent = {
+    setup: function() {
+      $( this ).bind( "mouseover", jQuery.event.special.hoverintent.handler );
+    },
+    teardown: function() {
+      $( this ).unbind( "mouseover", jQuery.event.special.hoverintent.handler );
+    },
+    handler: function( event ) {
+      var currentX, currentY, timeout,
+        args = arguments,
+        target = $( event.target ),
+        previousX = event.pageX,
+        previousY = event.pageY;
+ 
+      function track( event ) {
+        currentX = event.pageX;
+        currentY = event.pageY;
+      };
+ 
+      function clear() {
+        target
+          .unbind( "mousemove", track )
+          .unbind( "mouseout", clear );
+        clearTimeout( timeout );
+      }
+ 
+      function handler() {
+        var prop,
+          orig = event;
+ 
+        if ( ( Math.abs( previousX - currentX ) +
+            Math.abs( previousY - currentY ) ) < 7 ) {
+          clear();
+ 
+          event = $.Event( "hoverintent" );
+          for ( prop in orig ) {
+            if ( !( prop in event ) ) {
+              event[ prop ] = orig[ prop ];
+            }
+          }
+          // Prevent accessing the original event since the new event
+          // is fired asynchronously and the old event is no longer
+          // usable (#6028)
+          delete event.originalEvent;
+ 
+          target.trigger( event );
+        } else {
+          previousX = currentX;
+          previousY = currentY;
+          timeout = setTimeout( handler, 100 );
+        }
+      }
+ 
+      timeout = setTimeout( handler, 100 );
+      target.bind({
+        mousemove: track,
+        mouseout: clear
+      });
+    }
+  };
+</script>
+</article></div>
+                    </div>
+                </div>
+            </div>           	<footer class="footer">
+				<div class="content-layout-wrapper layout-item-0">
+					<div class="content-layout layout-item-1">
+   						<div class="content-layout-row">
+    						<div class="layout-cell layout-item-2" style="width: 50%">
+        						<p><br><a href="impressum.html">Impressum</a></p>
+    						</div>
+    						<div class="layout-cell layout-item-2" style="width: 50%">
+        						<p><span style="text-align: right;"><span style="color: #FFFFFF;">Info &nbsp;den nächsten</span> <span style="color: #FFFFFF;">Tag</span>&nbsp;<input value="Emailadresse eintragen" style="font-style: italic; width: 170px; height: 28px; color: rgb(128, 128, 128);" onFocus="this.value=''">&nbsp;&nbsp;<a class="button">Anmelden</a></span><br></p>
+    						</div>
+   						</div>
+					</div>
+				</div>
+			</footer>
+
+    </div>
+
+</div>
+
+
+</body></html>
